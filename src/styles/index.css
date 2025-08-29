@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    font-family: 'Microsoft YaHei', sans-serif;
+    user-select: none;
+  }
+}
+
+@layer components {
+  .star-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(2px 2px at 20px 30px, #ffd700, transparent),
+      radial-gradient(2px 2px at 40px 70px, #87ceeb, transparent),
+      radial-gradient(1px 1px at 90px 40px, #ff69b4, transparent),
+      radial-gradient(1px 1px at 130px 80px, #ffd700, transparent),
+      radial-gradient(2px 2px at 160px 30px, #87ceeb, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: twinkle 4s ease-in-out infinite;
+  }
+  
+  .galaxy-river {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(135, 206, 235, 0.3) 20%, 
+      rgba(255, 105, 180, 0.2) 50%, 
+      rgba(135, 206, 235, 0.3) 80%, 
+      transparent 100%);
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .magpie {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    background-image: url('https://down-cdn.dingtalk.com/ddmedia/iwElAqNqcGcDBgTRAfgF0QFIBrCR4OFgtjlQzgiOd8wC9TsAB9IB61N7CAAJqm9wZW4udG9vbHMKAAvRUIc.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.1s ease-out;
+    z-index: 10;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+  }
+  
+  .magpie::before {
+    display: none;
+  }
+  
+  .magpie::after {
+    display: none;
+  }
+  
+  .star-item {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ffd700, #ffed4e);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: twinkle 2s ease-in-out infinite;
+    z-index: 5;
+  }
+  
+  .bridge-segment {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #87ceeb, #4682b4);
+    border-radius: 50%;
+    animation: bridge-glow 2s ease-in-out infinite;
+    z-index: 3;
+  }
+  
+  .game-ui {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    z-index: 20;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  .instruction {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    text-align: center;
+    z-index: 20;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  }
+  
+  .success-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+    color: white;
+    text-align: center;
+  }
+  
+  .lovers {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background: linear-gradient(180deg, #ff69b4, #ffd700);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.8;
+    z-index: 15;
+  }
+  
+  .lovers.male {
+    background: linear-gradient(180deg, #4682b4, #87ceeb);
+  }
+  
+  .floating-hearts {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff69b4;
+    transform: rotate(45deg);
+    animation: float 3s ease-in-out infinite;
+    z-index: 25;
+  }
+  
+  .floating-hearts::before,
+  .floating-hearts::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff69b4;
+    border-radius: 50%;
+  }
+  
+  .floating-hearts::before {
+    top: -7.5px;
+    left: 0;
+  }
+  
+  .floating-hearts::after {
+    top: 0;
+    left: -7.5px;
+  }
+}
