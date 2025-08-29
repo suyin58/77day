@@ -1,0 +1,3 @@
+[build]
+publish = "build" # 指定输出目录为 build
+command = "npm run build" # 指定构建命令
